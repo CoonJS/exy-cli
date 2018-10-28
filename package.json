@@ -1,5 +1,5 @@
 {
-  "name": "create-app",
+  "name": "exy",
   "version": "1.0.0",
   "description": "CLI for fast project creating",
   "main": "index.js",

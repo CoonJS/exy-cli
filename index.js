@@ -10,7 +10,7 @@ const { prompt } = require('inquirer');
 clear();
 console.log(
   chalk.green(
-    figlet.textSync('Create React App', { horizontalLayout: 'full' })
+    figlet.textSync('EXY  CLI', { horizontalLayout: 'full' })
   )
 );
 
@@ -34,7 +34,7 @@ const questions = [
 
 program
   .version('0.0.1')
-  .description('Create React App');
+  .description('ESEX CLI');
 
 program
   .command('init')

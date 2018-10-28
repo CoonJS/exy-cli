@@ -1,0 +1,25 @@
+{
+  "name": "create-app",
+  "version": "1.0.0",
+  "description": "CLI for fast project creating",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CLI",
+    "Node.JS",
+    "JavaScript"
+  ],
+  "author": "Babanov Roman",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "clear": "^0.1.0",
+    "commander": "^2.19.0",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.2.0"
+  }
+}

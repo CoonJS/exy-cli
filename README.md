@@ -1,2 +1,2 @@
-# create-app-cli
-Simple CLI for creating React/Vue Apps
+# EXY CLI
+Simple CLI for fast creating React/Vue Apps

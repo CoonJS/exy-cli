@@ -1,36 +1,19 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
 const clear = require('clear');
 const chalk = require('chalk');
 const figlet = require('figlet');
 const program = require('commander');
 const { prompt } = require('inquirer');
+const questions = require('./questions');
 
 clear();
+
 console.log(
   chalk.green(
     figlet.textSync('EXY  CLI', { horizontalLayout: 'full' })
   )
 );
-
-const questions = [
-  {
-    type : 'input',
-    name : 'projectName',
-    message : 'Enter project name ...'
-  },
-  {
-    type : 'list',
-    name: 'store',
-    choices: [
-      { name: 'Redux', value: 'redux' },
-      { name: 'MobX', value: 'mobx' },
-      { name: 'No store', value: null }
-    ],
-    message : 'Use store ?'
-  }
-];
 
 program
   .version('0.0.1')

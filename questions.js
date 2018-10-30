@@ -21,14 +21,14 @@ module.exports = [
     name : 'author',
     message : 'Author'
   },
-  {
-    type : 'list',
-    name: 'store',
-    choices: [
-      { name: 'Redux', value: 'redux' },
-      { name: 'MobX', value: 'mobx' },
-      { name: 'No store', value: null }
-    ],
-    message : 'Use store ?'
-  }
+  // {
+  //   type : 'list',
+  //   name: 'store',
+  //   choices: [
+  //     { name: 'Redux', value: 'redux' },
+  //     { name: 'MobX', value: 'mobx' },
+  //     { name: 'No store', value: null }
+  //   ],
+  //   message : 'Use store ?'
+  // }
 ];

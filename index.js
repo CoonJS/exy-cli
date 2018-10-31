@@ -24,7 +24,7 @@ console.log(
 
 program
   .version('0.0.1')
-  .description('ESEX CLI');
+  .description('EXY CLI');
 
 program
   .command('init')

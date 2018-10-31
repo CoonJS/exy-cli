@@ -7,9 +7,11 @@ const chalk = require('chalk');
 const figlet = require('figlet');
 const program = require('commander');
 const { prompt } = require('inquirer');
-const questions = require('./questions');
+const shell = require('shelljs');
+const Spinner = require('cli-spinner').Spinner;
 
-const templatePath = 'src/AppTemplate';
+const questions = require('./questions');
+const templatePath = 'src/ReactApp';
 
 clear();
 
@@ -18,6 +20,7 @@ console.log(
     figlet.textSync('EXY  CLI', { horizontalLayout: 'full' })
   )
 );
+
 
 program
   .version('0.0.1')
@@ -34,13 +37,26 @@ program
 
       copyFolderRecursiveSync(path.resolve(__dirname, templatePath), process.cwd());
 
-      fs.writeFile('AppTemplate/package.json', JSON.stringify(packageJSONBaseConfig, null, 2), (err) => {
+      const spinner = new Spinner('Installing dependencies.. %s');
+      spinner.setSpinnerString('|/-\\');
+      spinner.start();
+
+      fs.writeFile('ReactApp/package.json', JSON.stringify(packageJSONBaseConfig, null, 2), (err) => {
         if (err) {
           console.log(err);
         }
-      });
 
+
+        shell.cd('ReactApp');
+        const install = shell.exec('npm install && npm start', { async: true });
+
+        install.stdout.on('data', () => {
+          spinner.stop();
+        });
+
+      });
     });
+
 
   }));
 

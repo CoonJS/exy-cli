@@ -1,0 +1,19 @@
+image: node:latest
+variables:
+  #CI_DEBUG_TRACE: "true"
+  GIT_SSL_NO_VERIFY: "true"
+  NPM_REGISTRY_HTTPS: https://artifactory.dev.bi.zone:8443/repository/npm/
+  NPM_EMAIL: npm-private-user@bi.zone
+  NPM_REGISTRY_HTTPS_PRIVATE: https://artifactory.dev.bi.zone:8443/repository/npm-private
+
+publish:
+  only:
+  - master
+  before_script:
+  - echo "registry=${NPM_REGISTRY_HTTPS}">~/.npmrc
+  - echo "always-auth=true">>~/.npmrc
+  - echo "email=${NPM_EMAIL}">>~/.npmrc
+  - echo "_auth=${NPM_REGISTRY__AUTH}">>~/.npmrc
+  - echo "strict-ssl=false">>~/.npmrc
+  script:
+  - npm publish --registry ${NPM_REGISTRY_HTTPS_PRIVATE}

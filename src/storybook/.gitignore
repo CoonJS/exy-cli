@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Node
+node_modules/
+
+# Dev
+.idea/
+*.l0cal*
+storybook/

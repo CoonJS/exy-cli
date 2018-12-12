@@ -1,0 +1,58 @@
+{
+  "name": "",
+  "version": "",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "storybook": "./node_modules/.bin/start-storybook -p 6010",
+    "storybook:build": "./node_modules/.bin/build-storybook -o storybook",
+    "modules:drop": "rm package-lock.json && rm -rf node_modules",
+    "modules:update": "npm run modules:drop && npm i",
+    "modules:sync": "npm run modules:drop && ncu -ua && npm i"
+  },
+  "bem": {
+    "levels": [
+      "blocks"
+    ]
+  },
+  "dependencies": {
+    "@bizone/elements": "0.19.7",
+    "@bizone/icons": "2.12.0",
+    "@bizone/typography": "^3.12.0",
+    "@bizone/utils": "1.5.1",
+    "bem-react-core": "0.5.0-beta",
+    "prop-types": "15.6.2",
+    "react": "16.4.1",
+    "react-dom": "16.4.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "3.4.8",
+    "@storybook/addon-knobs": "3.4.8",
+    "@storybook/addon-links": "3.4.8",
+    "@storybook/addon-options": "3.4.8",
+    "@storybook/react": "3.4.8",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-1": "6.24.1",
+    "css-loader": "0.28.11",
+    "less": "3.0.4",
+    "less-loader": "4.1.0",
+    "markdown-loader": "3.0.0",
+    "prettier": "1.13.7",
+    "prettier-loader": "2.1.1",
+    "react-storybook-addon-chapters": "2.1.5",
+    "storybook-readme": "3.3.0",
+    "style-loader": "0.21.0",
+    "webpack-bem-loader": "0.6.3-custom.3",
+    "webpack-merge": "4.1.3"
+  },
+  "files": [
+    ".storybook",
+    "blocks"
+  ]
+}

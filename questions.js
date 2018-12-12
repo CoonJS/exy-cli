@@ -3,6 +3,7 @@ const templates = require('./config').templates;
 module.exports = [
   {
     type: 'input',
+
     name: 'template',
     message: `Choose project template: one of [ ${templates.join(' , ')} ]`,
     default: 'ReactApp',

@@ -29,8 +29,6 @@ program
 program
   .command('init')
   .action(prompt(questions).then(answers => {
-    console.log('answers', answers);
-
     const packagePath = path.resolve(__dirname, getTemplatePath(answers.template), 'package.json');
 
     fs.readFile(packagePath, 'utf8', (err, data) => {

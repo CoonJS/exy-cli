@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ReactLogo from './img/ReactLogo.png';
+import ReactLogo from './assets/img/ReactLogo.png';
 import './global.css';
 
 export default class App extends Component {

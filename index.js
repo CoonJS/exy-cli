@@ -34,7 +34,7 @@ program
 
     fs.readFile(packagePath, 'utf8', (err, data) => {
       const baseConfig = JSON.parse(data);
-      const packageJSONBaseConfig = { ...baseConfig, ...answers };
+      const packageJSONBaseConfig = { ...baseConfig, ...config };
 
       copyFolderRecursiveSync(path.resolve(__dirname, templatePath), process.cwd());
 

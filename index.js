@@ -11,7 +11,6 @@ const shell = require('shelljs');
 const Spinner = require('cli-spinner').Spinner;
 
 const questions = require('./questions');
-const templatePath = 'src/ReactApp';
 
 clear();
 
@@ -21,7 +20,6 @@ console.log(
   )
 );
 
-
 program
   .version('0.0.1')
   .description('EXY CLI');
@@ -29,7 +27,10 @@ program
 program
   .command('init')
   .action(prompt(questions).then(answers => {
+    const { template, ...config } = answers;
+    const templatePath = `src/${template}`;
     const packagePath = path.resolve(__dirname, templatePath, 'package.json');
+
 
     fs.readFile(packagePath, 'utf8', (err, data) => {
       const baseConfig = JSON.parse(data);
@@ -41,13 +42,13 @@ program
       spinner.setSpinnerString('|/-\\');
       spinner.start();
 
-      fs.writeFile('ReactApp/package.json', JSON.stringify(packageJSONBaseConfig, null, 2), (err) => {
+      fs.writeFile(`${template}/package.json`, JSON.stringify(packageJSONBaseConfig, null, 2), (err) => {
         if (err) {
           console.log(err);
         }
 
 
-        shell.cd('ReactApp');
+        shell.cd(template);
         const install = shell.exec('npm install && npm start', { async: true });
 
         install.stdout.on('data', () => {

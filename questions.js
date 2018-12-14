@@ -1,5 +1,14 @@
 module.exports = [
   {
+    type : 'list',
+    name: 'template',
+    choices: [
+      { name: 'React', value: 'react' },
+      { name: 'Vue', value: 'vue' }
+    ],
+    message : 'Choose app template'
+  },
+  {
     type : 'input',
     name : 'name',
     message : 'Enter project name ...',
@@ -20,15 +29,5 @@ module.exports = [
     type : 'input',
     name : 'author',
     message : 'Author'
-  },
-  // {
-  //   type : 'list',
-  //   name: 'store',
-  //   choices: [
-  //     { name: 'Redux', value: 'redux' },
-  //     { name: 'MobX', value: 'mobx' },
-  //     { name: 'No store', value: null }
-  //   ],
-  //   message : 'Use store ?'
-  // }
+  }
 ];
